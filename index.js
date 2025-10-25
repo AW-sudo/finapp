@@ -49,7 +49,7 @@ class Api {
     // фильтры
     if (filters.category) query.set("category", filters.category);
     if (filters.type) query.set("type", filters.type);
-    if (filters.description) query.set("description_like", filters.description);
+    if (filters.description) query.set("description", filters.description);
 
     // сортировка
     if (sortState.field) {
@@ -87,7 +87,7 @@ const filters = {
   // endDate: "",
 };
 
-// в json-server не работает сортировка и сравнение дат?
+// в json-server не работает сравнение дат?
 
 const sortState = {
   field: null, // 'date' | 'amount'
@@ -138,15 +138,15 @@ operationToHTML = (operation, categories) => {
   row.className = "border-b border-gray-100";
 
   row.innerHTML = `
-    <td class="py-3 px-4">${new Date(operation.date).toLocaleDateString(
+    <td class="py-3 px-2 md:px-4">${new Date(operation.date).toLocaleDateString(
       "ru-RU"
     )}</td>
-    <td class="py-3 px-4">${categoryName}</td>
-    <td class="py-3 px-4">${operation.description}</td>
-    <td class="py-3 px-4">${typeName}</td>
-    <td class="py-3 px-4 text-right">${formattedAmount}</td>
+    <td class="py-3 px-2 md:px-4">${categoryName}</td>
+    <td class="py-3 px-2 md:px-4">${operation.description}</td>
+    <td class="py-3 px-2 md:px-4">${typeName}</td>
+    <td class="py-3 px-2 md:px-4 text-right">${formattedAmount}</td>
 
-    <td class="py-3 px-4 text-right relative">
+    <td class="py-3 px-2 md:px-4 text-right relative">
       <button class="menu-btn p-2 rounded-full hover:bg-gray-100 focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none"
              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -157,10 +157,10 @@ operationToHTML = (operation, categories) => {
       </button>
 
       <div class="menu hidden absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 z-10">
-        <button class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2 edit-btn">
+        <button type="button" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2 edit-btn">
           ✏️ Редактировать
         </button>
-        <button class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 flex items-center gap-2 delete-btn">
+        <button type="button" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 flex items-center gap-2 delete-btn">
           🗑️ Удалить
         </button>
       </div>
@@ -214,7 +214,7 @@ renderPagination = () => {
     const btn = document.createElement("button");
     btn.textContent = i;
     btn.className =
-      "px-3 py-1 rounded-lg border " +
+      "px-1 md:px-3 py-1 rounded-lg border " +
       (i === currentPage
         ? "bg-blue-600 text-white border-blue-600"
         : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100");

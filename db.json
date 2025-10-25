@@ -1,22 +1,6 @@
 {
   "operations": [
     {
-      "id": "1",
-      "amount": 5000,
-      "date": "2025-10-09",
-      "category": 1,
-      "description": "Пополнение инвестиционного счета",
-      "type": "expence"
-    },
-    {
-      "id": "2",
-      "amount": 120,
-      "date": "2025-10-09",
-      "category": 2,
-      "description": "Подарок на день рождения друга",
-      "type": "expence"
-    },
-    {
       "id": "3",
       "amount": 2400,
       "date": "2025-10-08",
@@ -86,14 +70,6 @@
       "date": "2025-10-10",
       "category": 4,
       "description": "Покупка обуви",
-      "type": "expence"
-    },
-    {
-      "id": "12",
-      "amount": 800,
-      "date": "2025-10-11",
-      "category": 3,
-      "description": "Массаж и процедуры",
       "type": "expence"
     },
     {
@@ -239,6 +215,14 @@
       "category": 5,
       "description": "Оплата за дизайн проект",
       "type": "income"
+    },
+    {
+      "id": "d7a8",
+      "amount": 1000,
+      "date": "2025-10-16",
+      "category": 2,
+      "type": "expence",
+      "description": "asdabvfd"
     }
   ],
   "categories": [
